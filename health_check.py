@@ -24,9 +24,9 @@ def check_memory():
     mem = psutil.virtual_memory()
     available_memory = mem.available / 1024 ** 2  # Convert bytes to megabytes
     if available_memory < 500:
-        print("Error - Available memory is less than 500MB")
+        return True
     else:
-        print(f"Current available memory: {available_memory:.2f}MB")
+        return False
 
 
 def check_connection():
